@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harbin Cuisine · Northeast China Flavors</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', 'Roboto', sans-serif; }
+    body { background: #f0f4f8; color: #1a2a3a; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #b0d4e9;
+      flex-wrap: wrap;
+    }
+    .logo a {
+      text-decoration: none;
+      color: #0a4b7a;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+    nav ul { display: flex; gap: 2rem; list-style: none; }
+    nav a { 
+      text-decoration: none; 
+      color: #1a2a3a; 
+      font-weight: 500; 
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #0a4b7a; border-bottom: 2px solid #c8a84e; }
+
+    .page-title {
+      margin: 45px 0 15px;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #0a2a3a;
+    }
+    .subhead {
+      font-size: 1.2rem;
+      max-width: 750px;
+      margin-bottom: 45px;
+      color: #3a5a6a;
+      border-left: 5px solid #c8a84e;
+      padding-left: 25px;
+    }
+
+    /* Intro Card */
+    .intro-card {
+      background: white;
+      border-radius: 28px;
+      padding: 35px 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      border: 1px solid #c8dce8;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+    .intro-text {
+      flex: 2 1 300px;
+    }
+    .intro-text h2 {
+      font-size: 1.8rem;
+      color: #0a4b7a;
+      margin-bottom: 15px;
+    }
+    .intro-text p {
+      margin-bottom: 15px;
+      color: #1a2a3a;
+      line-height: 1.7;
+    }
+    .intro-highlight {
+      flex: 1 1 200px;
+      background: #e0edf5;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .intro-highlight .number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #0a4b7a;
+    }
+    .intro-highlight p {
+      color: #3a5a6a;
+    }
+
+    /* Food Grid */
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 35px;
+      margin-bottom: 50px;
+    }
+    .food-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      transition: all 0.25s;
+      border: 1px solid #c8dce8;
+    }
+    .food-card:hover { 
+      box-shadow: 0 24px 38px -12px rgba(10, 75, 122, 0.15); 
+      transform: translateY(-5px);
+    }
+    .food-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .food-info {
+      padding: 25px;
+    }
+    .food-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #0a4b7a;
+    }
+    .category {
+      display: inline-block;
+      background: #c8dce8;
+      color: #0a4b7a;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #5a7a8a;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+    .desc {
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: #1a2a3a;
+      line-height: 1.6;
+    }
+    .tip {
+      background: #e0edf5;
+      padding: 14px 18px;
+      border-radius: 18px;
+      font-size: 0.95rem;
+      border-left: 6px solid #c8a84e;
+      color: #0a2a3a;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0 50px;
+      color: #0a4b7a;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+    .back-link:hover { 
+      text-decoration: underline;
+      transform: translateX(-5px);
+    }
+
+    footer {
+      background: #0a2a3a;
+      color: #c8dce8;
+      padding: 30px 20px;
+      margin-top: 30px;
+      border-radius: 40px 40px 0 0;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      header { flex-direction: column; gap: 15px; }
+      nav ul { flex-wrap: wrap; justify-content: center; }
+      .page-title { font-size: 2.5rem; }
+      .intro-card { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><a href="index.html">HARBIN</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="food.html">Cuisine</a></li>
+          <li><a href="heritage.html">Heritage</a></li>
+          <li><a href="festivals.html">Ice & Snow</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="page-title">🍖 Flavors of the Northeast</h1>
+      <div class="subhead">Harbin's cuisine is a unique marriage of Russian smoked traditions, Manchu hearty stews, and Shandong cooking techniques. Eat like a local to survive -30°C winters.</div>
+
+      <div class="intro-card">
+        <div class="intro-text">
+          <h2>The Trans-Siberian Table</h2>
+          <p>When Russian engineers arrived in 1898 to build the Chinese Eastern Railway, they brought bread, sausage, and beer. Over a century later, Harbin's Red Sausage (Hong Chang) and Dalieba bread are more famous here than in Russia.</p>
+          <p>This guide covers both the Russian-influenced classics and the soul-warming Dongbei (Northeast) dishes that fuel the Ice City.</p>
+        </div>
+        <div class="intro-highlight">
+          <div class="number">120+</div>
+          <p>years of Russian culinary influence</p>
+        </div>
+      </div>
+
+      <div class="food-grid">
+        <!-- Dish 1 -->
+        <div class="food-card">
+          <img src="images/hongchang.jpg" alt="Harbin red sausage on cutting board">
+          <div class="food-info">
+            <span class="category">RUSSIAN LEGACY</span>
+            <h3>Harbin Red Sausage (Hong Chang)</h3>
+            <div class="location">📍 Qiulin Company · Central Street</div>
+            <p class="desc">Smoked pork sausage with a distinct garlic bite. The aroma hits you before you enter the store. Locals eat it cold, sliced thin, with a chunk of Dalieba bread.</p>
+            <div class="tip">💡 Pro tip: Buy from Qiulin or Shangri-La — avoid street vendors selling "fresh" ones (they're often imitations).</div>
+          </div>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="food-card">
+          <img src="images/guobaorou.jpg" alt="Guo Bao Rou sweet and sour pork">
+          <div class="food-info">
+            <span class="category">DONGBEI CLASSIC</span>
+            <h3>Guo Bao Rou</h3>
+            <div class="location">📍 Lao Chu Jia · Daowai District</div>
+            <p class="desc">Crispy double-fried pork slices coated in a glossy sweet-and-sour sauce. Unlike American Chinese versions, this one uses potato starch for an extra crunch that holds up to the sauce.</p>
+            <div class="tip">💡 Best eaten immediately. The contrast between crispy shell and tender pork is the whole point.</div>
+          </div>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="food-card">
+          <img src="images/dalieba.jpg" alt="Dalieba Russian bread">
+          <div class="food-info">
+            <span class="category">RUSSIAN LEGACY</span>
+            <h3>Dalieba (Russian Bread)</h3>
+            <div class="location">📍 Qiulin Bakery · Central Street</div>
+            <p class="desc">A massive round sourdough loaf weighing up to 2kg, baked in a traditional Russian stone oven. The crust is hard, the inside dense and slightly sour — perfect for sopping up stew.</p>
+            <div class="tip">💡 Toast it and slather with butter and Harbin red sausage for the ultimate local breakfast.</div>
+          </div>
+        </div>
+
+        <!-- Dish 4 -->
+        <div class="food-card">
+          <img src="images/disanxian.jpg" alt="Di San Xian potato eggplant pepper">
+          <div class="food-info">
+            <span class="category">VEGETARIAN HERO</span>
+            <h3>Di San Xian</h3>
+            <div class="location">📍 Any local Dongbei restaurant</div>
+            <p class="desc">"Three Earthly Treasures" — potato, eggplant, and green pepper — stir-fried separately then combined in a savory garlic sauce. Simple ingredients, life-changing flavor.</p>
+            <div class="tip">💡 Despite being vegetarian, this dish is NOT light. Everything is fried before stir-frying. Embrace the oil.</div>
+          </div>
+        </div>
+
+        <!-- Dish 5 -->
+        <div class="food-card">
+          <img src="images/suancha.jpg" alt="Suancha fermented cabbage stew">
+          <div class="food-info">
+            <span class="category">WINTER SURVIVAL</span>
+            <h3>Suancha (Fermented Cabbage Stew)</h3>
+            <div class="location">📍 Dongbei Renjia · Various locations</div>
+            <p class="desc">Before refrigeration, Harbin families survived winter on fermented Napa cabbage. Stewed with pork belly and glass noodles, it's sour, rich, and deeply warming.</p>
+            <div class="tip">💡 Order a side of blood sausage (xue chang) to stir in — it adds an earthy depth.</div>
+          </div>
+        </div>
+
+        <!-- Dish 6 -->
+        <div class="food-card">
+          <img src="images/madieer.jpg" alt="Modern ice cream at Madieer">
+          <div class="food-info">
+            <span class="category">WINTER ICON</span>
+            <h3>Madieer Ice Cream</h3>
+            <div class="location">📍 Central Street · Open year-round</div>
+            <p class="desc">Yes, ice cream in -30°C weather. This century-old shop sells popsicles that don't melt because it's so cold. The original milk flavor is creamy and dense — locals eat it while strolling the frozen street.</p>
+            <div class="tip">💡 Try the yogurt flavor. And yes, buy it in winter — that's the authentic Harbin experience.</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-link">← Back to Homepage</a>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2026 · Ice City Chronicles · All images CC-licensed or original works</p>
+  </footer>
+</body>
+</html>

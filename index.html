@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Harbin · Ice City of China</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Roboto', 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: #f0f4f8;
+      color: #1a2a3a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #b0d4e9;
+      flex-wrap: wrap;
+    }
+
+    .logo a {
+      text-decoration: none;
+      color: #0a4b7a;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .logo small {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #5a7a8a;
+      margin-left: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1a2a3a;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #0a4b7a;
+      border-bottom: 2px solid #c8a84e;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      padding: 50px 0 70px;
+    }
+
+    .hero-content {
+      flex: 1 1 350px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #0a2a3a;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: #0a4b7a;
+      border-bottom: 4px solid #c8a84e;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #3a5a6a;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: #0a4b7a;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #063a5e;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(10, 75, 122, 0.25);
+    }
+
+    .btn-outline {
+      border-color: #0a4b7a;
+      color: #0a4b7a;
+    }
+
+    .btn-outline:hover {
+      background: #0a4b7a;
+      color: white;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 30px 40px -15px rgba(0,0,0,0.2);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Highlights Section */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin: 50px 0 60px;
+    }
+
+    .highlight-item {
+      text-align: center;
+      padding: 25px 15px;
+      background: white;
+      border-radius: 24px;
+      border: 1px solid #c8dce8;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    }
+
+    .highlight-item .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .highlight-item h4 {
+      font-size: 1.3rem;
+      color: #0a4b7a;
+      margin-bottom: 8px;
+    }
+
+    .highlight-item p {
+      color: #5a7a8a;
+      font-size: 0.95rem;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      margin: 50px 0 30px;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #0a2a3a;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #c8a84e;
+      margin: 15px auto 0;
+    }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border: 1px solid #c8dce8;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px rgba(10, 75, 122, 0.12);
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+      color: #0a2a3a;
+    }
+
+    .card p {
+      color: #5a7a8a;
+      margin-bottom: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #c8a84e;
+      color: #0a2a3a;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a2a3a;
+      color: #c8dce8;
+      padding: 45px 0 30px;
+      margin-top: 50px;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    footer h4 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    footer a {
+      color: #a0c4d8;
+      text-decoration: none;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .newsletter input {
+      padding: 12px 18px;
+      border-radius: 40px;
+      border: none;
+      width: 100%;
+      margin-bottom: 12px;
+      background: #1a3a4a;
+      color: white;
+    }
+
+    .newsletter input::placeholder {
+      color: #a0c4d8;
+    }
+
+    .newsletter button {
+      background: #0a4b7a;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+
+    .newsletter button:hover {
+      background: #063a5e;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      nav ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 0 50px;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <a href="index.html">HARBIN</a>
+        <small>Ice City · Oriental Moscow</small>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="food.html">Cuisine</a></li>
+          <li><a href="heritage.html">Heritage</a></li>
+          <li><a href="festivals.html">Ice & Snow</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Where ice meets <br><span>fire in your</span> soul</h1>
+        <p>From the frozen magic of Ice Festival to the warmth of Russian-style dumplings. Harbin is China's winter capital — a city built by Russian architects and Chinese dreamers.</p>
+        <div class="btn-group">
+          <a href="festivals.html" class="btn btn-primary">Explore Ice Festival →</a>
+          <a href="food.html" class="btn btn-outline">Taste Harbin</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/harbin-hero.jpg" alt="Saint Sophia Cathedral in Harbin covered in snow at twilight">
+      </div>
+    </section>
+
+    <!-- Quick Highlights -->
+    <div class="highlights">
+      <div class="highlight-item">
+        <div class="emoji">❄️</div>
+        <h4>-30°C Winters</h4>
+        <p>Home to the world's largest ice and snow festival</p>
+      </div>
+      <div class="highlight-item">
+        <div class="emoji">🏛️</div>
+        <h4>Russian Legacy</h4>
+        <p>Byzantine architecture meets Chinese dragon culture</p>
+      </div>
+      <div class="highlight-item">
+        <div class="emoji">🍖</div>
+        <h4>Smoked Sausage</h4>
+        <p>Eastern Europe's culinary soul in Northeast China</p>
+      </div>
+      <div class="highlight-item">
+        <div class="emoji">🌉</div>
+        <h4>Songhua River</h4>
+        <p>Frozen highway in winter, romantic promenade in summer</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Discover the Oriental Paris</h2>
+    <div class="card-grid">
+      <!-- Card 1: Food -->
+      <a href="food.html" class="card">
+        <img src="images/harbin-food.jpg" alt="Harbin red sausage and Russian bread">
+        <div class="card-content">
+          <h3>🍖 Northeast Feast</h3>
+          <p>Smoked red sausage, Guo Bao Rou (sweet & sour pork), and hearty stews that fuel you through winter.</p>
+          <span class="badge">8 must-eat dishes →</span>
+        </div>
+      </a>
+      
+      <!-- Card 2: Heritage -->
+      <a href="heritage.html" class="card">
+        <img src="images/sophia-cathedral.jpg" alt="Saint Sophia Cathedral green domes">
+        <div class="card-content">
+          <h3>⛪ Russian Soul</h3>
+          <p>Saint Sophia Cathedral, Central Street cobblestones, and the legacy of the Trans-Siberian Railway.</p>
+          <span class="badge">Explore history →</span>
+        </div>
+      </a>
+      
+      <!-- Card 3: Ice Festival -->
+      <a href="festivals.html" class="card">
+        <img src="images/ice-festival.jpg" alt="Harbin Ice and Snow World at night">
+        <div class="card-content">
+          <h3>❄️ Kingdom of Ice</h3>
+          <p>Massive illuminated ice castles carved from the frozen Songhua River. A wonderland that melts every spring.</p>
+          <span class="badge">Festival guide →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ice City Chronicles</h4>
+          <p>Your digital ambassador to China's winter wonderland. Discover Harbin through the eyes of locals.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="food.html">Cuisine Guide</a></li>
+            <li><a href="heritage.html">Russian Heritage</a></li>
+            <li><a href="festivals.html">Ice Festival</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Plan Your Visit</h4>
+          <ul>
+            <li><a href="#">Best Time to Visit</a></li>
+            <li><a href="#">What to Wear (-30°C!)</a></li>
+            <li><a href="#">Getting Around</a></li>
+            <li><a href="#">Winter Survival Tips</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h4>Get Winter Updates</h4>
+          <p style="margin-bottom: 15px; font-size: 0.9rem;">Ice Festival dates and insider tips.</p>
+          <input type="email" placeholder="Your email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 · Ice City Chronicles · All photography original or CC-licensed.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

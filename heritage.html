@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Russian Heritage · Harbin</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', 'Roboto', sans-serif; }
+    body { background: #f0f4f8; color: #1a2a3a; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #b0d4e9;
+      flex-wrap: wrap;
+    }
+    .logo a {
+      text-decoration: none;
+      color: #0a4b7a;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+    nav ul { display: flex; gap: 2rem; list-style: none; }
+    nav a { text-decoration: none; color: #1a2a3a; font-weight: 500; font-size: 1.1rem; }
+    nav a:hover { color: #0a4b7a; border-bottom: 2px solid #c8a84e; }
+
+    .page-title {
+      margin: 45px 0 15px;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #0a2a3a;
+    }
+    .subhead {
+      font-size: 1.2rem;
+      max-width: 750px;
+      margin-bottom: 45px;
+      color: #3a5a6a;
+      border-left: 5px solid #c8a84e;
+      padding-left: 25px;
+    }
+
+    .feature-spotlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 60px;
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      border: 1px solid #c8dce8;
+    }
+    .feature-spotlight img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      flex: 1 1 400px;
+    }
+    .feature-content {
+      flex: 1 1 300px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .feature-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #0a4b7a;
+    }
+    .feature-content p {
+      margin-bottom: 20px;
+      color: #3a5a6a;
+      line-height: 1.7;
+    }
+    .highlight-badge {
+      display: inline-block;
+      background: #c8a84e;
+      color: #0a2a3a;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      align-self: flex-start;
+    }
+
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 35px;
+      margin: 50px 0;
+    }
+    .heritage-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      transition: all 0.25s;
+      border: 1px solid #c8dce8;
+    }
+    .heritage-card:hover { box-shadow: 0 24px 38px -12px rgba(10, 75, 122, 0.15); }
+    .heritage-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+    .heritage-info {
+      padding: 25px;
+    }
+    .heritage-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #0a4b7a;
+    }
+    .era {
+      display: inline-block;
+      background: #c8dce8;
+      color: #0a4b7a;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    .desc {
+      margin-bottom: 18px;
+      color: #1a2a3a;
+    }
+    .fun-fact {
+      background: #e0edf5;
+      padding: 14px 18px;
+      border-radius: 18px;
+      font-size: 0.95rem;
+      border-left: 6px solid #c8a84e;
+      color: #0a2a3a;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0 50px;
+      color: #0a4b7a;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    footer {
+      background: #0a2a3a;
+      color: #c8dce8;
+      padding: 30px 20px;
+      margin-top: 30px;
+      border-radius: 40px 40px 0 0;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      header { flex-direction: column; gap: 15px; }
+      .page-title { font-size: 2.5rem; }
+      .feature-content { padding: 30px 25px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><a href="index.html">HARBIN</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="food.html">Cuisine</a></li>
+          <li><a href="heritage.html">Heritage</a></li>
+          <li><a href="festivals.html">Ice & Snow</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="page-title">⛪ Echoes of Little Russia</h1>
+      <div class="subhead">Harbin is the only Chinese city where you can see Orthodox onion domes against the skyline. This is the legacy of the Russian émigrés who built the city's soul.</div>
+
+      <div class="feature-spotlight">
+        <img src="images/sophia-cathedral-interior.jpg" alt="Saint Sophia Cathedral green domes against blue sky">
+        <div class="feature-content">
+          <h2>Saint Sophia Cathedral</h2>
+          <p>The unmistakable symbol of Harbin. Built in 1907 by Russian expatriates, this Byzantine-style Orthodox church with its signature green onion dome now houses the Harbin Architecture Art Gallery. The square in front is where locals gather for snow selfies.</p>
+          <span class="highlight-badge">⭐ Largest Orthodox church in Far East</span>
+        </div>
+      </div>
+
+      <div class="heritage-grid">
+        <div class="heritage-card">
+          <img src="images/central-street.jpg" alt="Central Street cobblestones">
+          <div class="heritage-info">
+            <h3>Central Street (Zhongyang Dajie)</h3>
+            <span class="era">Pedestrian Street · 1.4km</span>
+            <p class="desc">A living museum of European architecture. Baroque, Renaissance, and Art Nouveau buildings line this cobblestone street, built with stones that cost a silver dollar each in 1924.</p>
+            <div class="fun-fact">💡 Walk slowly — there are 71 buildings under architectural protection on this one street.</div>
+          </div>
+        </div>
+
+        <div class="heritage-card">
+          <img src="images/songhua-river-bridge.jpg" alt="Songhua River Railway Bridge">
+          <div class="heritage-info">
+            <h3>Songhua River Railway Bridge</h3>
+            <span class="era">Built 1901 · Trans-Siberian Link</span>
+            <p class="desc">The reason Harbin exists. This steel truss bridge was the first bridge across the Songhua River and the critical link for the Chinese Eastern Railway connecting Moscow to Vladivostok via Manchuria.</p>
+            <div class="fun-fact">💡 Now a pedestrian glass walkway — you can walk the same path as early 20th-century Russian engineers.</div>
+          </div>
+        </div>
+
+        <div class="heritage-card">
+          <img src="images/jewish-synagogue.jpg" alt="Harbin Jewish Synagogue">
+          <div class="heritage-info">
+            <h3>Jewish New Synagogue</h3>
+            <span class="era">Built 1921</span>
+            <p class="desc">At its peak, Harbin was home to over 20,000 Russian Jews fleeing pogroms. This beautifully restored synagogue now houses the Harbin Jewish History Museum, telling a little-known chapter of the city's multicultural past.</p>
+            <div class="fun-fact">💡 Former Israeli Prime Minister Ehud Olmert's grandparents are buried in Harbin's Jewish cemetery.</div>
+          </div>
+        </div>
+
+        <div class="heritage-card">
+          <img src="images/volga-manor.jpg" alt="Volga Manor Russian village">
+          <div class="heritage-info">
+            <h3>Volga Manor</h3>
+            <span class="era">Cultural Theme Park</span>
+            <p class="desc">A sprawling recreation of a Russian village 30km outside the city. Features rebuilt wooden churches, dachas, and a replica of the destroyed St. Nicholas Church. Sledding in winter, flower fields in summer.</p>
+            <div class="fun-fact">💡 Stay overnight in a Russian-style log cabin for the full experience.</div>
+          </div>
+        </div>
+
+        <div class="heritage-card">
+          <img src="images/st-alexeev.jpg" alt="Saint Alexeev Church">
+          <div class="heritage-info">
+            <h3>Saint Alexeev Church</h3>
+            <span class="era">Built 1931 · Active Church</span>
+            <p class="desc">Unlike Sophia (now a museum), this red-brick Orthodox church still holds regular services for Harbin's small Russian Orthodox community. The interior is intimate and covered in icons.</p>
+            <div class="fun-fact">💡 Visit during Orthodox Easter for a rare glimpse of living tradition in Harbin.</div>
+          </div>
+        </div>
+
+        <div class="heritage-card">
+          <img src="images/modern-hotel.jpg" alt="Modern Hotel on Central Street">
+          <div class="heritage-info">
+            <h3>Modern Hotel (Madie'er Binguan)</h3>
+            <span class="era">Opened 1906</span>
+            <p class="desc">The grand dame of Harbin hotels. This Art Nouveau gem hosted celebrities, spies, and Silk Road merchants. Even if you don't stay, have a coffee in the 1903 lobby bar — it feels like stepping into a Tarkovsky film.</p>
+            <div class="fun-fact">💡 The hotel's ice cream shop (Madie'er) on the ground floor is the most famous in China.</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-link">← Back to Homepage</a>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2026 · Ice City Chronicles · All images CC-licensed or original works</p>
+  </footer>
+</body>
+</html>
